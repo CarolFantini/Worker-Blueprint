@@ -40,8 +40,8 @@ jobs:
 
       - name: Add GitHub NuGet source
         if: matrix.os == 'ubuntu-latest'
-        run: dotnet nuget add source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --name github --username ${{ github.actor }} --password ${{ secrets.WORKERBLUEPRINT_TOKEN_TOKEN }} --store-password-in-clear-text
+        run: dotnet nuget add source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --name github --username ${{ github.actor }} --password ${{ secrets.WORKERBLUEPRINT_TOKEN }} --store-password-in-clear-text
 
       - name: Publish to GitHub Packages
         if: matrix.os == 'ubuntu-latest'
-        run: dotnet nuget push "./artifacts/*.nupkg" --source github --api-key ${{ secrets.WORKERBLUEPRINT_TOKEN_TOKEN }} --skip-duplicate
+        run: dotnet nuget push "./artifacts/*.nupkg" --source github --api-key ${{ secrets.WORKERBLUEPRINT_TOKEN }} --skip-duplicate
