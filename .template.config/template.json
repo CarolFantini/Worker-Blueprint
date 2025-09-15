@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Carolina Fantini",
+  "classifications": [ "Web", "Worker" ],
+  "identity": "WorkerBlueprint.CSharp",
+  "name": "Worker Blueprint",
+  "shortName": "workerblueprint",
+  "sourceName": "WorkerBlueprint",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
