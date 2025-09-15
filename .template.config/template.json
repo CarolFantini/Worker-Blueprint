@@ -5,10 +5,15 @@
   "identity": "WorkerBlueprint.CSharp",
   "name": "Worker Blueprint",
   "shortName": "workerblueprint",
-  "sourceName": "WorkerBlueprint",
+  "sourceName": "Worker_Blueprint",
   "preferNameDirectory": true,
   "tags": {
     "language": "C#",
     "type": "project"
-  }
+  },
+  "exclude": [
+    "template.csproj",
+    ".git",
+    ".git/**"
+  ]
 }
