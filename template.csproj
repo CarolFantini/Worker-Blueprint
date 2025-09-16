@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Worker_Blueprint</PackageId>
-    <Version>3.0.0</Version>
+    <Version>4.0.0</Version>
     <Authors>Carolina</Authors>
-      <RepositoryUrl>https://github.com/CarolFantini/Worker_Blueprint</RepositoryUrl>
+    <RepositoryUrl>https://github.com/CarolFantini/Worker_Blueprint</RepositoryUrl>
     <PackageType>Template</PackageType>
     <TargetFramework>net8.0</TargetFramework>
     <Description>Template de Worker</Description>
