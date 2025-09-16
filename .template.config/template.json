@@ -10,5 +10,11 @@
   "tags": {
     "language": "C#",
     "type": "project"
-  }
+  },
+    "sources": [
+    {
+      "source": "./",
+      "exclude": [ "template.csproj", ".git" ]
+    }
+  ]
 }
