@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Worker_Blueprint</PackageId>
-    <Version>5.0.0</Version>
+    <Version>5.1.0</Version>
     <Authors>Carolina Fantini</Authors>
     <RepositoryUrl>https://github.com/CarolFantini/Worker_Blueprint</RepositoryUrl>
     <PackageType>Template</PackageType>
@@ -14,9 +14,7 @@
     <EnableDefaultItems>false</EnableDefaultItems>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="src\**\*" Pack="true" PackagePath="content" Exclude="**\bin\**;**\obj\**" />
-    <Content Include="tests\**\*" Pack="true" PackagePath="content" Exclude="**\bin\**;**\obj\**" />
-    <Content Include=".github\**\*" Pack="true" PackagePath="content" />
+    <Content Include="**\*" Pack="true" PackagePath="content" Exclude="**\bin\**;**\obj\**" />
     <None Include="README.md" Pack="true" PackagePath="" />
     <None Include="LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
