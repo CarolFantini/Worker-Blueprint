@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Worker_Blueprint</PackageId>
-    <Version>5.1.0</Version>
+    <Version>5.2.0</Version>
     <Authors>Carolina Fantini</Authors>
     <RepositoryUrl>https://github.com/CarolFantini/Worker_Blueprint</RepositoryUrl>
     <PackageType>Template</PackageType>
