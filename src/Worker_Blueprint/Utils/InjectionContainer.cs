@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Quartz;
 using Worker.Data;
 using Worker.Interfaces;
+using Worker.Jobs;
 using Worker.Repositories;
 using Worker.Services;
 using Worker.Services.Interfaces;
@@ -18,6 +20,7 @@ namespace Worker.Utils
             services.RegisterServices();
             services.ConfigureDatabase();
             services.RegisterRepositories();
+            services.ConfigureJobs();
 
             return services;
         }
@@ -81,6 +84,26 @@ namespace Worker.Utils
         private static IServiceCollection RegisterRepositories(this IServiceCollection services)
         {
             services.AddScoped<ILogRepository, LogRepository>();
+
+            return services;
+        }
+
+        private static IServiceCollection ConfigureJobs(this IServiceCollection services)
+        {
+            services.AddTransient<IJob, ReportJob>();
+
+            services.AddQuartz(q =>
+            {
+                q.AddJob<ReportJob>(opts => opts.WithIdentity(ReportJob.Key));
+
+                q.AddTrigger(opts => opts
+                    .ForJob(ReportJob.Key)
+                    .WithIdentity("ReportJob-trigger")
+                    .WithCronSchedule("0 0 0 * * ?")
+                );
+            });
+
+            services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
             return services;
         }
