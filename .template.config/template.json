@@ -14,7 +14,7 @@
     "sources": [
     {
       "source": "./",
-      "exclude": [ "template.csproj", ".git" ]
+      "exclude": [ "template.csproj", ".git/**/*", ".template.config/**/*" ]
     }
   ]
 }
